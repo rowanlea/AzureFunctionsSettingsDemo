@@ -14,6 +14,10 @@ namespace AzureFunctionsSettingsDemo
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req)
         {
             int baseMultiplier = 1;
+            
+            var fromSettings = Environment.GetEnvironmentVariable("CustomMultiplier");
+            Int32.TryParse(fromSettings, out baseMultiplier);
+
             int number = Convert.ToInt32(req.Query["number"]);
             return new OkObjectResult($"Multiplied number is: {number * baseMultiplier}");
         }
