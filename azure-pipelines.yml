@@ -7,8 +7,6 @@ trigger:
 - main
 
 variables:
-- group: MySettings
-
 - name: azureSubscription
   value: '9788b840-d9f0-48d7-a845-ced97dceb6dc'
 
