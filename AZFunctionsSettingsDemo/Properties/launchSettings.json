@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "AzureFunctionsSettingsDemo": {
+    "AZFunctionsSettingsDemo": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7084",
+      "commandLineArgs": "--port 7216",
       "launchBrowser": false
     }
   }

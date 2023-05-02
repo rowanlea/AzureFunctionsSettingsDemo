@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionsSettingsDemo", "AzureFunctionsSettingsDemo\AzureFunctionsSettingsDemo.csproj", "{832D04E4-2FFD-4C67-97A7-F3057798C64E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AZFunctionsSettingsDemo", "AZFunctionsSettingsDemo\AZFunctionsSettingsDemo.csproj", "{5E11D3D9-ABE2-4BD3-9B6C-6472BF572D17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{832D04E4-2FFD-4C67-97A7-F3057798C64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{832D04E4-2FFD-4C67-97A7-F3057798C64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{832D04E4-2FFD-4C67-97A7-F3057798C64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{832D04E4-2FFD-4C67-97A7-F3057798C64E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E11D3D9-ABE2-4BD3-9B6C-6472BF572D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E11D3D9-ABE2-4BD3-9B6C-6472BF572D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E11D3D9-ABE2-4BD3-9B6C-6472BF572D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E11D3D9-ABE2-4BD3-9B6C-6472BF572D17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EA0E9BC5-86E1-4489-97C6-24472049E3C3}
+		SolutionGuid = {87BBF587-BA78-4A74-AB6D-1CC2DF10C526}
 	EndGlobalSection
 EndGlobal
