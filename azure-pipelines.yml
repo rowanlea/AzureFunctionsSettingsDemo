@@ -7,17 +7,19 @@ trigger:
 - main
 
 variables:
-  # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '9788b840-d9f0-48d7-a845-ced97dceb6dc'
+- group: MySettings
 
-  # Function app name
-  functionAppName: 'AZFunctionsSettingsDemo'
+- name: azureSubscription
+  value: '9788b840-d9f0-48d7-a845-ced97dceb6dc'
 
-  # Agent VM image name
-  vmImageName: 'windows-2019'
+- name: functionAppName
+  value: 'AZFunctionsSettingsDemo'
 
-  # Working Directory
-  workingDirectory: '$(System.DefaultWorkingDirectory)/AZFunctionsSettingsDemo'
+- name: vmImageName
+  value: 'windows-2019'
+
+- name: workingDirectory
+  value: '$(System.DefaultWorkingDirectory)/AZFunctionsSettingsDemo'
 
 stages:
 - stage: Build
@@ -74,3 +76,4 @@ stages:
               appType: functionApp
               appName: $(functionAppName)
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              appSettings: -CustomMultiplier $(DevOpsMultiplier)
