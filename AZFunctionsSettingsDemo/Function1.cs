@@ -16,6 +16,9 @@ namespace AZFunctionsSettingsDemo
         {
             int baseMultiplier = 1;
 
+            var fromSettings = Environment.GetEnvironmentVariable("CustomMultiplier");
+            Int32.TryParse(fromSettings, out baseMultiplier);
+
             int number = Convert.ToInt32(req.Query["number"]);
             return new OkObjectResult($"Multiplied number is: {number * baseMultiplier}");
         }
