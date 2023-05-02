@@ -69,6 +69,12 @@ stages:
         deploy:
 
           steps:
+          - task: AzureKeyVault@2
+            inputs:
+              azureSubscription: 'Functions Test'
+              KeyVaultName: 'kv-func-test'
+              SecretsFilter: '*'
+              RunAsPreJob: false
           - task: AzureFunctionApp@1
             displayName: 'Azure functions app deploy'
             inputs:
