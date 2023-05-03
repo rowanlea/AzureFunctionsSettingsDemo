@@ -7,17 +7,17 @@ trigger:
 - main
 
 variables:
-  # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '9788b840-d9f0-48d7-a845-ced97dceb6dc'
+- name: azureSubscription
+  value: '9788b840-d9f0-48d7-a845-ced97dceb6dc'
 
-  # Function app name
-  functionAppName: 'AZFunctionsSettingsDemo'
+- name: functionAppName
+  value: 'AZFunctionsSettingsDemo'
 
-  # Agent VM image name
-  vmImageName: 'windows-2019'
+- name: vmImageName
+  value: 'windows-2019'
 
-  # Working Directory
-  workingDirectory: '$(System.DefaultWorkingDirectory)/AZFunctionsSettingsDemo'
+- name: workingDirectory
+  value: '$(System.DefaultWorkingDirectory)/AZFunctionsSettingsDemo'
 
 stages:
 - stage: Build
@@ -67,6 +67,12 @@ stages:
         deploy:
 
           steps:
+          - task: AzureKeyVault@2
+            inputs:
+              azureSubscription: 'Functions Test'
+              KeyVaultName: 'kv-func-test'
+              SecretsFilter: '*'
+              RunAsPreJob: false
           - task: AzureFunctionApp@1
             displayName: 'Azure functions app deploy'
             inputs:
@@ -74,3 +80,4 @@ stages:
               appType: functionApp
               appName: $(functionAppName)
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              appSettings: -CustomMultiplier $(CustomMultiplier)
